@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-primary text-base font-normal mx-auto;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  input {
+    @apply outline-none;
+  }
+}
+
+input:focus + .error-input {
+  display: none;
+}
+
+.form-layout {
+  @apply grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 mb-5 lg:mb-10;
+}
+
+.form-layout2 {
+  @apply grid grid-cols-1 lg:grid-cols-3 lg:gap-x-10 mb-2 lg:mb-4;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  .selected {
+    @apply text-primary;
+  }
+
+  .previous,
+  .next {
+    box-shadow: 0px 3px 6px rgba(131, 146, 166, 0.1);
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    transition: all 0.1s linear;
+    @apply bg-primary hover:border-white hover:text-white;
+  }
+}
+
+.shadow-1 {
+  box-shadow: -4px 4px 8px rgba(226, 226, 226, 0.2), 4px 4px 8px rgba(226, 226, 226, 0.2);
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 3fr repeat(4, 1fr);
+}
+
+.menu-list {
+  width: 150px;
+  border-radius: 8px;
+  background: rgb(255, 255, 255);
+  box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px;
+  .menu-item {
+    margin-left: 0;
+  }
+}
+
+.menu-item {
+  width: 100%;
+  justify-content: flex-start;
+  border-radius: 0;
+  padding: 11px 16px;
+  line-height: 1.8rem;
+  font-weight: 600;
+  &:hover {
+    background-color: rgba(22, 24, 35, 0.03);
+  }
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+// custom date picker
+body {
+  .react-date-picker {
+    @apply w-full px-6 py-4 text-sm font-medium border rounded-xl placeholder:text-text4 dark:placeholder:text-text2 dark:text-white bg-slate-200 border-strock text-text1 dark:border-darkStroke;
+    height: 54px;
+    .react-date-picker__wrapper {
+      @apply border-none justify-between items-center;
+    }
+    .react-date-picker__clear-button {
+      @apply hidden;
+    }
+    .react-date-picker__inputGroup {
+      min-width: 0;
+      flex-grow: 0;
+    }
+    .react-date-picker__button {
+      padding: 0;
+    }
+  }
+  .react-date-picker__calendar .react-calendar {
+    @apply border-none shadow rounded-lg;
+  }
+  .react-calendar__navigation button:enabled:hover,
+  .react-calendar__navigation button:enabled:focus {
+    @apply bg-transparent;
+  }
+  .react-calendar__tile:not(.react-calendar__tile--active, .react-calendar__tile--now):enabled:hover,
+  .react-calendar__tile:not(.react-calendar__tile--active, .react-calendar__tile--now):enabled:focus {
+    @apply bg-transparent text-primary;
+  }
+  .react-calendar__tile--active:enabled:hover,
+  .react-calendar__tile--active:enabled:focus,
+  .react-calendar__tile--active,
+  .react-calendar__tile--active:hover {
+    @apply bg-primary text-white rounded-lg;
+  }
+  .react-calendar__tile--now:enabled:hover,
+  .react-calendar__tile--now:enabled:focus,
+  .react-calendar__tile--now,
+  .react-calendar__tile--now:hover {
+    @apply bg-secondary text-white rounded-lg;
+  }
+}
+
+.input-number {
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
